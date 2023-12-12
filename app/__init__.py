@@ -49,12 +49,3 @@ import api
 
 import error_handlers
 from models.superheros import Superheros
-
-# Populate Heroes
-with app.app_context():
-    if Superheros.query.count() == 0:
-        print('No heroes')
-    db.session.add_all([Superheros(name='batman'),
-                       Superheros(name='superman'),
-                       Superheros(name='spiderman')])
-    db.session.commit()
