@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class='card' style="margin:auto;width:400px;padding:30px;box-shadow:0px 4px 20px 0px rgba(0, 0, 0, 0.2);">
+    <h4>Superhero</h4>
+    <hr>
+    <form method="post" action="">
+        <div class="mb-3">
+            <label for="superheroInput" class="form-label">Search for a Superhero</label>
+            <input type="text" class="form-control" id="superheroInput" name="superhero" placeholder="Enter here">
+        </div>
+        <br/>
+        <br/>
+        <div class="mb-3">
+            <span id='loginBtn'><input type="submit" class="btn btn-primary" value="Search"></span>
+        </div>
+    </form>
+    {% if result %}
+        <p>API Result</p>
+        <div style="border:1px solid black;padding:5px;">
+        {{ result }}
+        </div>
+    {% endif  %}
+
+</div>
+{% endblock %}
