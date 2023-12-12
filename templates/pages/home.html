@@ -19,12 +19,23 @@ Home
             <span id='loginBtn'><input type="submit" class="btn btn-primary" value="Search"></span>
         </div>
     </form>
+    {% if id %}
+        <form method="post" action="/favourite-actions">
+            <input type="hidden" name="superhero" value="{{ id }}"/>
+            <input type="submit" class="btn btn-warning" value="Favourite this hero">
+        </form>
+    {% endif  %}
+    <br><br>
+
     {% if result %}
         <p>API Result</p>
         <div style="border:1px solid black;padding:5px;">
         {{ result }}
         </div>
     {% endif  %}
+
+
+
 
 </div>
 {% endblock %}
