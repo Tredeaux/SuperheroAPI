@@ -4,6 +4,7 @@ from app import app
 
 API_DOMAIN = 'http://localhost:5000/'
 
+
 # - CONTROLLER ------------------------------------------------#
 #   This is the index page                                     #
 # -------------------------------------------------------------#
