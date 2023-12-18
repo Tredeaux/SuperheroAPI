@@ -89,3 +89,22 @@ def get_favourite_superhero():
     return Response('{"message": "Something went wrong"}',
                     status=500,
                     mimetype='application/json')
+
+
+# - API Endpoint ----------------------------------------------#
+#   This is the clear endpoint                                 #
+# -------------------------------------------------------------#
+@app.route('/delete', methods=['GET'])
+def delete_favourites():
+    app.logger.info('DELETE FAVOURITES')
+    try:
+        Favourites.query.delete()
+        db.session.commit()
+        return Response('{"message": "Cleared"}',
+                        status=200,
+                        mimetype='application/json')
+    except Exception as e:
+        return Response('{"message": "' + e + '"}',
+                        status=500,
+                        mimetype='application/json')
+

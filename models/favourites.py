@@ -20,4 +20,4 @@ class Favourites(db.Model):
     superhero = relationship("Superheros")
 
     def __repr__(self):
-        return f'<Superhero {self.id} - {self.superhero_id}>'
+        return f'id:{self.id} - name: {self.superhero.name}'

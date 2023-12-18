@@ -25,9 +25,12 @@ def index():
                 data = json.loads(r.text)
                 if data["message"] == "success":
                     id = data["superhero"]["id"]
+    favourites = requests.get(API_DOMAIN + 'get_favourite')
+    favourites = favourites.text
     return render_template('pages/home.html',
                            result=result,
-                           id=id)
+                           id=id,
+                           favourites=favourites)
 
 
 # - CONTROLLER ------------------------------------------------#
